@@ -1,0 +1,216 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="actor-sheet-header flexrow">
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+        <div class="header-fields">
+            <h1 class="header_title" >{{getSetting "cs_title"}}</h1>
+            <div class="header_section flexrow">
+                <div class="flexcol flex2">
+                    <div class="flexrow">
+                        <label for="name">{{localize "breathless2.gen.name"}}</label>
+                        <input class="flex3" name="name" id="name" type="text" value="{{actor.name}}"/>
+                    </div>
+                    <div class="flexrow">
+                        <label for="pronouns">{{localize "breathless2.gen.pronouns"}}</label>
+                        <input class="flex3" name="system.pronouns" id="pronouns" type="text" value="{{system.pronouns}}"/>
+                    </div>
+                    <div class="flexrow">
+                        <label for="job-name">{{getSetting "job_name"}}</label>
+                        <input class="flex3" name="system.job.name" id="job-name" type="text" value="{{system.job.name}}"/>
+                    </div>
+                </div>
+                <div class="header_buttons">
+                    <button type="button" class="on-click" data-roll-type="catch-breath">{{getSetting "catch_your_breath"}}</h2></button>
+                    <button type="button" class="on-click" data-roll-type="lay-low">{{getSetting "lay_low"}}</button>
+                    {{#if (getSetting "enable_lootcheck")}}
+                        <button type="button" class="on-click" data-roll-type="loot-check">{{getSetting "loot_table_name"}}</button>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs tab-bar" data-group="primary">
+        <a class="item" data-tab="main">{{localize "breathless2.tab.main"}}</a>
+        <a class="item" data-tab="biography">{{localize "breathless2.tab.bio"}}</a>
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+        
+        {{!-- Main Tab --}}
+        <div class="tab main-tab-section flexrow" data-group="primary" data-tab="main">
+            <div class="left_column">
+                {{!-- Skills --}}
+                <div class="item-section-header">
+                    <button type="button" class="on-click" data-roll-type="item-create" data-type="skill"><i class="fas fa-plus-square"></i></button> 
+                    <h2>{{getSetting "skill_name"}}</h2> 
+                    ({{localize "breathless2.gen.initial"}}/{{localize "breathless2.gen.current.long"}})
+                </div>
+                {{#each skills as |skill id|}}
+                    <div class="flexrow item-block" data-item-id="{{skill._id}}">
+                        <input class="inline-edit-item" data-field="name" data-item-id="{{skill._id}}" type="text" value="{{skill.name}}"/>
+                        <span class="item-dice-box-initial flex0" data-field="system.initial">
+                            {{skill.system.initial}}
+                        </span>
+                        <span class="flexcol flex0">
+                            <a class="on-click" data-roll-type="stepup" data-field="initial" data-item-id="{{skill._id}}"><i class="fa-solid fa-caret-up"></i></a>
+                            <a class="on-click" data-roll-type="stepdown" data-field="initial" data-item-id="{{skill._id}}"><i class="fa-solid fa-caret-down"></i></a>
+                        </span>
+                        <span class="item-dice-box flex0">
+                            <a class="on-click" data-roll-type="roll-dice" data-field="system.current" data-item-id="{{skill._id}}">{{skill.system.current}}</a>
+                        </span>
+                        <span class="flexcol flex0">
+                            <a class="on-click" data-roll-type="stepup" data-field="current" data-item-id="{{skill._id}}"><i class="fa-solid fa-caret-up"></i></a>
+                            <a class="on-click" data-roll-type="stepdown" data-field="current" data-item-id="{{skill._id}}"><i class="fa-solid fa-caret-down"></i></a>
+                        </span>
+                        <span class="item-controls flexcol flex0">
+                            <a class="on-click" data-roll-type="item-edit" title="Edit {{skill.name}}" data-item-id="{{skill._id}}"><i class="fa-solid fa-pencil"></i></a>
+                            <a class="on-click" data-roll-type="item-delete" title="Delete {{skill.name}}" data-item-id="{{skill._id}}"><i class="fa-solid fa-xmark"></i></a>
+                        </span>
+                    </div>
+                {{/each}}
+            </div>
+            
+            <div class="right_column">
+                <div class="resource-box grid grid-1col">
+                    {{!-- Stress --}}
+                    <div class="stress_box grid-span-2">
+                        <div class="flexrow stress">
+                            <h1 class="flex0">{{getSetting "stress_name"}}</h1>
+                            {{#each system.stress.states as |state count|}}
+                                {{#ife state 0}}
+                                    <a data-pos="{{count}}" class="on-click flex0" data-roll-type="toggle-stress"><i class="fa-regular fa-circle"></i></a>
+                                {{/ife}}
+                                {{#ife state 1}}
+                                    <a data-pos="{{count}}" class="on-click flex0" data-roll-type="toggle-stress"><i class="fa-solid fa-circle"></i></a>
+                                {{/ife}}
+                            {{/each}}
+                        </div>
+                        {{#if system.stress.vulnerable}}
+                            <div class="vulnerable_message">
+                                <span class="flex0">{{localize "breathless2.gen.vulnerable"}}!</span>
+                            </div>
+                        {{/if}}
+                    </div>
+
+                    {{!-- Medkit --}}
+                    {{#if (getSetting "enable_healing")}}
+                        <div class="flexrow single-circle-button-group" id="bl-healing">
+                            <h2>{{getSetting "healing_name"}}</h2> 
+                            <a class="on-click" data-roll-type="use-healing">
+                                {{#ife system.healing.used true}}
+                                    <i class="fa-solid fa-circle"></i>
+                                {{/ife}}
+                                {{#ife system.healing.used false}}
+                                    <i class="fa-regular fa-circle"></i>
+                                {{/ife}}
+                            </a>
+                        </div>
+                    {{/if}}
+
+                    {{!-- Stunt --}}
+                    <!--
+                    <div class="flexrow single-circle-button-group" id="bl-special">
+                        <h2>{{getSetting "special_name"}}</h2> 
+                        <a class="on-click" data-roll-type="use-special">
+                            {{#ife system.special.used true}}
+                                <i class="fa-solid fa-circle"></i>
+                            {{/ife}}
+                            {{#ife system.special.used false}}
+                                <i class="fa-regular fa-circle"></i>
+                            {{/ife}}
+                        </a>
+                    </div>
+                    -->
+
+                    <div class="grid-span-2 flexrow item-block justifyend" data-item-id="loot">
+                        <h2 class="flex0 width40pc">{{getSetting "loot_name"}}</h2>
+                        <span class="item-dice-box-initial flex0" data-field="initial">
+                            {{system.loot.initial}}
+                        </span>
+                        <span class="flexcol flex0">
+                            <a class="on-click" data-roll-type="stepup" data-field="initial" data-item-id="loot"><i class="fa-solid fa-caret-up"></i></a>
+                            <a class="on-click" data-roll-type="stepdown" data-field="initial" data-item-id="loot"><i class="fa-solid fa-caret-down"></i></a>
+                        </span>
+                        <span class="item-dice-box flex0">
+                            <a class="on-click" data-roll-type="roll-dice" data-field="current" data-item-id="loot">{{system.loot.current}}</a>
+                        </span>
+                        <span class="flexcol flex0">
+                            <a class="on-click" data-roll-type="stepup" data-field="current" data-item-id="loot"><i class="fa-solid fa-caret-up"></i></a>
+                            <a class="on-click" data-roll-type="stepdown" data-field="current" data-item-id="loot"><i class="fa-solid fa-caret-down"></i></a>
+                        </span>
+                    </div>
+
+                    <div class="grid-span-2 flexrow item-block justifyend" data-item-id="grit">
+                        <h2 class="flex0 width40pc">{{getSetting "grit_name"}}</h2>
+                        <span class="item-dice-box-initial flex0" data-field="initial">
+                            {{system.grit.initial}}
+                        </span>
+                        <span class="flexcol flex0">
+                            <a class="on-click" data-roll-type="stepup" data-field="initial" data-item-id="grit"><i class="fa-solid fa-caret-up"></i></a>
+                            <a class="on-click" data-roll-type="stepdown" data-field="initial" data-item-id="grit"><i class="fa-solid fa-caret-down"></i></a>
+                        </span>
+                        <span class="item-dice-box flex0">
+                            <a class="on-click" data-roll-type="roll-dice" data-field="current" data-item-id="grit">{{system.grit.current}}</a>
+                        </span>
+                        <span class="flexcol flex0">
+                            <a class="on-click" data-roll-type="stepup" data-field="current" data-item-id="grit"><i class="fa-solid fa-caret-up"></i></a>
+                            <a class="on-click" data-roll-type="stepdown" data-field="current" data-item-id="grit"><i class="fa-solid fa-caret-down"></i></a>
+                        </span>
+                    </div>
+
+                </div>
+
+
+                {{!-- Gear --}}
+                <div class="item-section-header">
+                    <button type="button" class="on-click" data-roll-type="item-create" data-type="gear"><i class="fas fa-plus-square"></i></button> 
+                    <h2>{{getSetting "storage_name"}}</h2> 
+                    ({{localize "breathless2.gen.initial"}}/{{localize "breathless2.gen.current.long"}}, {{localize "breathless2.gen.sheet.maxitems"}}: {{getSetting "storage_max"}})
+                </div>
+                {{#each gear as |gear id|}}
+                    <div class="flexrow item-block" data-item-id="{{gear._id}}">
+                        <input class="inline-edit-item" data-field="name" data-item-id="{{gear._id}}" type="text" value="{{gear.name}}"/>
+                        <span class="item-dice-box-initial flex0" data-field="system.initial">
+                            {{gear.system.initial}}
+                        </span>
+                        <span class="flexcol flex0">
+                            <a class="on-click" data-roll-type="stepup" data-field="initial" data-item-id="{{gear._id}}"><i class="fa-solid fa-caret-up"></i></a>
+                            <a class="on-click" data-roll-type="stepdown" data-field="initial" data-item-id="{{gear._id}}"><i class="fa-solid fa-caret-down"></i></a>
+                        </span>
+                        <span class="item-dice-box flex0">
+                            <a class="on-click" data-roll-type="roll-dice" data-field="system.current" data-item-id="{{gear._id}}">{{gear.system.current}}</a>
+                        </span>
+                        <span class="flexcol flex0">
+                            <a class="on-click" data-roll-type="stepup" data-field="current" data-item-id="{{gear._id}}"><i class="fa-solid fa-caret-up"></i></a>
+                            <a class="on-click" data-roll-type="stepdown" data-field="current" data-item-id="{{gear._id}}"><i class="fa-solid fa-caret-down"></i></a>
+                        </span>
+                        <span class="item-controls flexcol flex0">
+                            <a title="Edit {{gear.name}}" class="on-click" data-roll-type="item-edit" data-item-id="{{gear._id}}"><i class="fa-solid fa-pencil"></i></a>
+                            <a title="Delete {{gear.name}}" class="on-click" data-roll-type="item-delete" data-item-id="{{gear._id}}"><i class="fa-solid fa-xmark"></i></a>
+                        </span>
+                    </div>
+                {{/each}}
+            
+            </div>
+        </div>
+
+        {{!-- Bio Tab --}}
+        <div class="tab" data-group="primary" data-tab="biography">
+            <div class="bio-tab">
+                <div class="bio-section">
+                    
+                </div>
+                {{!-- Notes --}}
+                <div class="notes-section">
+                    <h2>{{localize "breathless2.ActorNotes"}}</h2>
+                    <div class="notes">
+                        {{editor system.notes target="system.notes" button=true engine="prosemirror" collaborate=false}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</form>

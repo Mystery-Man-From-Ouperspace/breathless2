@@ -1,0 +1,62 @@
+{
+    "id": "breathless2",
+    "title": "Breathless v2 System",
+    "description": "Foundry VTT system for Fari RPG's Breathless system",
+    "version": "v1.0.0",
+    "authors": [
+        {
+            "name": "Chris Clouser",
+            "discord": "Cannyjack"
+        },
+        {
+            "name": "ephson",
+            "url": "https://github.com/philote",
+            "discord": "ephson",
+            "reddit": "u/ephson"
+        }
+    ],
+    "compatibility": {
+        "minimum": 13,
+        "verified": "14.370",
+        "maximum": 14
+    },
+    "esmodules": [
+        "module/breathless2.js"
+    ],
+    "styles": [
+        "css/breathless2.css"
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        }
+    ],
+    "primaryTokenAttribute": "stress",
+    "url": "https://github.com/waryjack/breathless",
+    "manifest": "https://github.com/waryjack/breathless/releases/latest/download/system.json",
+    "download": "https://github.com/waryjack/breathless/releases/download/v1.0.0/system.zip",
+    "license": "LICENSE",
+    "readme": "README.md",
+    "bugs": "https://github.com/waryjack/breathless/issues",
+    "media": [
+        {
+            "type": "screenshot",
+            "url": "https://raw.githubusercontent.com/waryjack/breathless/main/assets/screenshot.webp",
+            "loop": false,
+            "caption": "Breathless screenshot from Foundry VTT."
+        },
+        {
+            "type": "cover",
+            "url": "https://raw.githubusercontent.com/waryjack/breathless/main/assets/cover.webp",
+            "loop": false,
+            "caption": "Cover Images for the Unofficial Breathless package."
+        },
+        {
+            "type": "setup",
+            "url": "https://raw.githubusercontent.com/waryjack/breathless/main/assets/package_image.webp",
+            "thumbnail": "https://raw.githubusercontent.com/waryjack/breathless/main/assets/package_image_thumb.webp"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+        <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{localize "breathless2.item.placeholder.name"}}"/></h1>
+    </header>
+    <hr/>
+    <div class="dice flexrow">
+        <h4>{{localize "breathless2.dialogs.labels.initial_die"}}</h4>
+        <select name="system.initial" id="initial">
+            {{selectOptions gearchoices selected=initial valueAttr="key" labelAttr="label" localize=true}}
+        </select>
+        <h4>{{localize "breathless2.dialogs.labels.current_die"}}</h4>
+        <select name="system.current" id="current">
+            {{selectOptions gearchoices selected=current valueAttr="key" labelAttr="label" localize=true}}
+        </select>
+    </div>
+</form>

@@ -1,0 +1,19 @@
+<form class="breathless2">
+    <header class="dialog-header">
+        <h1>{{localize "breathless2.dialogs.healing.title"}}</h1>
+    </header>
+    <hr/>
+    <section>
+        <div class="dice flexrow">
+            <h4>{{localize "breathless2.dialogs.healing.choice"}}</h4>
+            <select name="healingchoices" id="healing">
+                {{#select nbrHarmsCleared}}
+                    <option value="0">{{ localize "breathless2.dialogs.healing.item.zero" }}</option>
+                    <option value="1">{{ localize "breathless2.dialogs.healing.item.one" }}</option>
+                    <option value="2">{{ localize "breathless2.dialogs.healing.item.two" }}</option>
+                    <option value="3">{{ localize "breathless2.dialogs.healing.item.three" }}</option>
+                {{/select}}
+            </select>
+        </div>
+    </section>
+</form>

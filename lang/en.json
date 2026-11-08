@@ -1,0 +1,162 @@
+{
+    "TYPES": {
+        "Actor": {
+            "pc": "Character",
+            "npc": "NPC"
+        },
+        "Item": {
+            "skill": "Stat",
+            "gear": "Gear"
+        },
+        "Item.item": "Item"
+    },
+    
+    "breathless2.gen": {
+        "name":"Name",
+        "pronouns":"Pronouns",
+        "job":"Job",
+        "initial":"Initial",
+        "current.long":"Current",
+        "success.full":"Success!",
+        "success.withcost":"Success, at a cost",
+        "fail":"Failure",
+        "vulnerable":"Vulnerable",
+        "sheet.maxitems":"Max Items",
+        "new.skill":"New Stat",
+        "new.gear":"New Item",
+        "roll":"Roll",
+        "result": "Result:",
+        "catch":"Catch your Breath",
+        "loot.check":"Check for Loot",
+        "lay-low": "Lay Low Awhile"
+    },
+
+    "breathless2.tab": {
+        "main": "Main",
+        "bio": "Bio"
+    },
+
+    "breathless2.item": {
+        "placeholder.name": "Name",
+        "d4": "d4",
+        "d6": "d6",
+        "d8": "d8",
+        "d10": "d10",
+        "d12": "d12"
+    },
+
+    "breathless2.dialogs": {
+        "delete.title":"Delete Item",
+        "delete.confirm":"Are you sure you want to delete this item?",
+        "labels.ok":"OK",
+        "labels.cancel":"Cancel",
+        "labels.yes":"Yes",
+        "labels.initial_die": "Initial Die",
+        "labels.current_die": "Current Die",
+        "healing.title":"Choose number of harms cleared. ",
+        "healing.choice":"Harms to be cleared:",
+        "healing.item": {
+            "zero": "None",
+            "one": "One",
+            "two": "Two",
+            "three": "Three"
+        }
+    },
+
+    "breathless2.chatMessage.healUsed": "<b>NOTE</b>: {pcName} used Catch Your Breath.",
+    "breathless2.chatMessage.layLowUsed": "<b>NOTE</b>: {pcName} used Lay Low Awhile.",
+    "breathless2.error.lootCheck": "There is no Loot table set up. Create a new Rollable Table called \"Loot\", then try again.",
+    
+    "breathless2.interface.warning.maxstorage": "You can't add anything else to your {storName}.",
+
+    "breathless2.ActorNotes": "Notes",
+    "breathless2.npc": {
+        "LooksNpcInput": "Looks",
+        "BehaviorsNpcInput": "Behaviors",
+        "MotivationsNpcInput": "Motivations"
+    },
+
+    "breathless2.settings": {
+        "enable_storage": {
+            "name": "Enable Storage",
+            "hint": "Enables use of storage item like a backpack / war bag"
+        },
+        "enable_healing": {
+            "name": "Enable Healing",
+            "hint": "Characters can use healing item (e.g. medkit, healing spell, etc.)"
+        },
+        "enable_lootcheck": {
+            "name": "Enable Loot Check",
+            "hint": "Show loot check button on character sheet"
+        },
+        "cs_title": {
+            "name": "Character Sheet Title",
+            "hint": "Custom title for the character sheet",
+            "default": "Character Sheet"
+        },
+        "job_name": {
+            "name": "Job Custom Name",
+            "hint": "Set the displayed name for the Job label in your game (e.g. Profession, Role, etc.)",
+            "default": "Job"
+        },
+        "catch_your_breath": {
+            "name": "Catch Your Breath Custom Name",
+            "hint": "Set the displayed name for the 'Catch Your Breath' button in your game",
+            "default": "Catch Your Breath"
+        },
+        "lay_low": {
+            "name": "Lay Low Awhile Custom Name",
+            "hint": "Set the displayed name for the 'Lay Low Awhile' button in your game (e.g. Take a break, etc.)",
+            "default": "Lay Low Awhile"
+        },
+        "loot_name": {
+            "name": "Loot Custom Name",
+            "hint": "Set the displayed name for loot in your game",
+            "default": "Loot"
+        },
+        "loot_table_name": {
+            "name": "Loot Table Custom Name",
+            "hint": "Set the displayed name for the 'Check for Loot' button in your game (e.g. Scavenge, Search, etc.)",
+            "default": "Loot Table"
+        },
+        "grit_name": {
+            "name": "Grit Custom Name",
+            "hint": "Set the displayed name for grit in your game",
+            "default": "Grit"
+        },
+        "skill_name": {
+            "name": "Stats Custom Name",
+            "hint": "Set the displayed name for stats in your game (e.g. abilities, talents, skills, etc.)",
+            "default": "Stats"
+        },
+        "storage_name": {
+            "name": "Storage Custom Name",
+            "hint": "Custom name for storage - e.g. backpack, bag, kit, etc.",
+            "default": "Backpack"
+        },
+        "storage_max": {
+            "name": "Max Storage Capacity",
+            "hint": "How many kit or storage items can a character hold?"
+        },
+        "healing_name": {
+            "name": "Healing Custom Name",
+            "hint": "Set the displayed name for Healing in your game (e.g. medkit, spell, bandage, etc.)",
+            "default": "Safe Rest"
+        },
+        "stress_name": {
+            "name": "Harm Custom Name",
+            "hint": "Custom name for Harm in your game",
+            "default": "Harm"
+        },
+        "special_name": {
+            "name": "Special Ability Custom Name",
+            "hint": "Name for special ability - e.g. Stunt, Truth, etc.",
+            "default": "Stunt"
+        },
+        "special_unrolled": {
+            "name": "Special Ability Unrolled",
+            "hint": "Check this if the character's special ability does NOT trigger a dice roll"
+        }
+    }
+
+}
