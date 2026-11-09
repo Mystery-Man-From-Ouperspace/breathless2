@@ -40,6 +40,20 @@
     "license": "LICENSE",
     "readme": "README.md",
     "bugs": "https://github.com/waryjack/breathless/issues",
+    "packs": [
+      {   
+        "name": "stats",
+        "label": "Breathless v2 - Stats",
+        "system": "breathless2",
+        "path": "packs/stats",
+        "type": "Item",
+        "ownership": {
+          "PLAYER": "OBSERVER",
+          "ASSISTANT": "OWNER"
+        }
+      }
+    ],
+
     "media": [
         {
             "type": "screenshot",

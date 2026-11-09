@@ -523,8 +523,15 @@
 
 .breathless2 h2.width40pc {
   font-family: "Permanent Marker", cursive;
-  flex-grow: 1;
+  flex-grow: 2;
 }
+
+.breathless2 img.fit-picture {
+  height: 45px;
+  width: 45px;
+  border: none;
+}
+
 
 
 .theme-dark .breathless2 .window-content {

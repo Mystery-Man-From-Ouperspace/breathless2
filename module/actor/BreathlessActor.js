@@ -25,10 +25,48 @@ export class BreathlessActor extends Actor {
         context.rollData = context.actor.getRollData();
 
         if (actorData.type == 'pc') {
+
+            // Initialize Containers
+            const skill = [];
+            const gear = [];
+
             let charItems = context.items;
-            context.skills = charItems.filter(i => i.type === "skill");
-            context.gear = charItems.filter(i => i.type === "gear");
+
+            // Iterate through items and assign to containers
+            for (let i of charItems) {
+                switch (i.type) {
+                    case "skill": 
+                        skill.push(i)
+                        break
+
+                    case "gear": 
+                        gear.push(i)
+                        break
+                }
+            }
+
+            // Alphabetically sort all items
+            const itemCats = [skill, gear]
+            for (let category of itemCats) {
+                if (category.length > 1) {
+                    category.sort((a,b) => {
+                        let nameA = a.name.toLowerCase()
+                        let nameB = b.name.toLowerCase()
+                        if (nameA > nameB) {return 1}
+                        else {return -1}
+                    })
+                }
+            }
+
+            // Assign and return items
+            // let charItems = context.items;
+            // context.skills = charItems.filter(i => i.type === "skill");
+            // context.gear = charItems.filter(i => i.type === "gear");
+
+            context.skills = skill
+            context.gear = gear
         }
+
 
         context.healingchoices = [
             {key: "0", label: "breathless2.dialogs.healing.item.zero"},
