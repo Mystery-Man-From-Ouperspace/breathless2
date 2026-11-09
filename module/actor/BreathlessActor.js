@@ -40,15 +40,6 @@ export class BreathlessActor extends Actor {
         return context;
     }
 
-    _handlebarHelper() {
-      Handlebars.registerHelper('select', function (selected, options) { 
-            const escapedValue = RegExp.escape(Handlebars.escapeExpression(selected));
-            const rgx = new RegExp(' value=[\"\']' + escapedValue + '[\"\']');
-            const html = options.fn(this);
-            return html.replace(rgx, "$& selected");    
-        });
-    }
-
     /**
      * Prepare Character type specific data
      */
@@ -182,8 +173,7 @@ export class BreathlessActor extends Actor {
         this.update({"system.special.used":true});
     }
 
-    useHealing() {
-        /*
+    async useHealing() {
         // allow quick clearing of the toggle without triggering a heal
         if(this.system.healing.used == true) {
             this.update({"system.healing.used":false});
@@ -194,7 +184,9 @@ export class BreathlessActor extends Actor {
         this.update({"system.healing.used":!healToggle});
 
         // Render modal dialog
-        let myTemplate = 'systems/breathless2/templates/msg/vide.hbs';
+        const myTemplate = 'systems/breathless2/templates/msg/healingdialog.hbs';
+        const myTitle = await game.i18n.localize("breathless2.dialogs.healing.title");
+        console.log("myTitle", myTitle)
 
         var myDialogData = {
             nbrHarmsCleared: "0"
@@ -202,50 +194,58 @@ export class BreathlessActor extends Actor {
 
         let myDialogOptions;
 
-        // let templateData = foundry.utils.mergeObject(myDialogData, myDialogOptions);
+        const templateData = await foundry.utils.mergeObject(myDialogData, myDialogOptions);
 
-        // let myHtml = foundry.applications.handlebars.renderTemplate(myTemplate, templateData);
+        const myHtml = await foundry.applications.handlebars.renderTemplate(myTemplate, templateData);
 
-        // console.log ("myHtml", myHtml)
+        console.log ("myHtml", myHtml)
 
 
         // Create the Dialog window
-        console.log("Le dialogue va être affiché");
+        /*
+        console.log("Le dialogue va être affiché")
         // let prompt = await new Promise((resolve) => {
             let d = new Dialog(
                 {
-                    title: game.i18n.localize("breathless2.dialogs.healing.title"),
+                    title: myTitle,
                     content: myHtml,
                     buttons: {
                         one: {
                             icon: '<i class="fas fa-check"></i>',
                             label: game.i18n.localize("breathless2.dialogs.labels.ok"),
                             callback: () => {
-                                dialogData.nbrHarmsCleared = myHtml.find("select[name='healingchoices']").val();
-                                return dialogData;
-                            }
+                                myDialogData = await _computeResult(myDialogData, myHtml);
+                                return myDialogData;
+                                }
                         },
                         two: {
-                            icon: '<i class="fas fa-times"></i>',
+                            icon: '<i class="fas fa-cancel"></i>',
                             label: game.i18n.localize("breathless2.dialogs.labels.cancel"),
-                            callback: () => { return null; }
+                            callback: () => { return; }
                         }
                     },
-                    default: "two";
+                    default: "two",
+                    close: () => { return; }
                 }
-            ).render(true, {
+            );
+            d.render(true)
+            /*
+            d.render(true, {
                 width: 520,
                 height: "auto"
-            });
-            this.sheet.render(true);
-            if (d != null) {
-                return d.nbrHarmsCleared;
-            } else {
-                return dialogData.nbrHarmsCleared;
-            };
-        });
+            }
+        ); */
 
-        let healing = prompt.nbrHarmsCleared;
+        // this.sheet.render(true);
+        // });
+
+        /*
+        let healing;
+        if (d != null) {
+            healing = d.nbrHarmsCleared;
+        } else {
+            healing = myDialogData.nbrHarmsCleared;
+        };
 
         // toggle down some stress boxes
 
@@ -312,6 +312,13 @@ export class BreathlessActor extends Actor {
         this.update({"system.stress.states":states});
         this.sheet.render(true);
         */
+
+        async function _computeResult(myDialogData, myHtml) {
+            const editedData = {
+                nbrHarmsCleared: await myHtml.find("select[name='healingchoices']").val()
+            }
+            return editedData;
+        }
     }
 
     stepUp(id, field) {

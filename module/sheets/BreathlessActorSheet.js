@@ -192,7 +192,7 @@ export class BreathlessActorSheet extends foundry.appv1.sheets.ActorSheet {
                         }
                     },
                         two: {
-                        icon: '<i class="fas fa-times"></i>',
+                        icon: '<i class="fas fa-cancel"></i>',
                         label: game.i18n.localize("breathless2.dialogs.labels.cancel"),
                         callback: () => { return; }
                     }

@@ -30,6 +30,14 @@ Hooks.once("init", () => {
     registerSettings();
 
     // Register handlebar helpers
+    Handlebars.registerHelper('select', function (selected, options) { 
+        const escapedValue = RegExp.escape(Handlebars.escapeExpression(selected));
+        const rgx = new RegExp(' value=[\"\']' + escapedValue + '[\"\']');
+        const html = options.fn(this);
+        return html.replace(rgx, "$& selected");    
+    });
+    
+    // Register handlebar helpers
     Handlebars.registerHelper('ife', function(arg1, arg2, options) {
         return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
     });
