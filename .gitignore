@@ -2,7 +2,7 @@
 .idea/
 .vs/
 
-.github/workflow/main.yaml
+.github/workflow/main.yml
 
 # Node Modules
 node_modules/
