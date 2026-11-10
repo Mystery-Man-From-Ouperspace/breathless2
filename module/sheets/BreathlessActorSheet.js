@@ -272,7 +272,7 @@ export class BreathlessActorSheet extends foundry.appv1.sheets.ActorSheet {
         };
         let myHtml = `<form class="breathless2"><header class="dialog-header"><h1>`+
         game.i18n.localize("breathless2.dialogs.delete.confirm")+
-        `</h1></header></form>`
+        `</h1></header></form><hr/>`
 
         let d = new Dialog(
             {
