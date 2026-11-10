@@ -51,6 +51,7 @@ You can install the latest released version of the Breathless (v1) system by usi
 Link: https://github.com/waryjack/breathless/releases/latest/download/system.json
 
 This MMFO's latest released Breatless version 2 (compatible v13 & v14) is downloadable from this manifest link in Foundry VTT.
+
 Link: https://github.com/Mystery-Man-From-Ouperspace/breathless2/releases/download/breathless2/system.json
 
 It will be soon downloadable directly from whithin Foundry VTT, for I sbmitted it to them. 
