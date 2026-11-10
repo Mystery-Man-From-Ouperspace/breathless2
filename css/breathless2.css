@@ -532,6 +532,13 @@
   border: none;
 }
 
+.theme-dark #pause > img {
+  content: url("/systems/breathless2/assets/wheel_2.webp");
+  height: 192px;
+  width: 192px;
+  top: -45px;
+  left: calc(50% - 96px);
+}
 
 .theme-dark .breathless2 button.dialog-button.one,
 .theme-dark .breathless2 button.dialog-button.two {
