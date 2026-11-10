@@ -25,8 +25,8 @@ Version 2 may vary a lot from this descripion
 ## Features
 
 - Simple Character Sheet
-  - Name, Pronouns, Occupation, Stress tracker
-  - Safe Rest button button (heals Stress when clicked)
+  - Name, Pronouns, Occupation, Harm tress tracker
+  - Safe Rest button (heals 0-3 Harms when clicked)
   - Notes tab
 - Ability add and use Stats, dice type will change with use
 - Use Loot, dice type will change with use
