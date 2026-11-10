@@ -58,20 +58,20 @@
     "media": [
         {
             "type": "screenshot",
-            "url": "https://github.com/Mystery-Man-From-Ouperspace/breathless2/main/assets/screenshot.webp",
+            "url": "https://github.com/Mystery-Man-From-Ouperspace/breathless2/blob/main/assets/screenshot.webp",
             "loop": false,
             "caption": "Breathless screenshot from Foundry VTT."
         },
         {
             "type": "cover",
-            "url": "https://github.com/Mystery-Man-From-Ouperspace/breathless2/main/assets/cover.webp",
+            "url": "https://github.com/Mystery-Man-From-Ouperspace/breathless2/blob/main/assets/cover.webp",
             "loop": false,
             "caption": "Cover Images for the Unofficial Breathless package."
         },
         {
             "type": "setup",
-            "url": "https://github.com/Mystery-Man-From-Ouperspace/breathless2/main/assets/package_image.webp",
-            "thumbnail": "https://github.com/Mystery-Man-From-Ouperspace/breathless2/main/assets/package_image_thumb.webp"
+            "url": "https://github.com/Mystery-Man-From-Ouperspace/breathless2/blob/main/assets/package_image.webp",
+            "thumbnail": "https://github.com/Mystery-Man-From-Ouperspace/breathless2/blob/main/assets/package_image_thumb.webp"
         }
     ]
 }
