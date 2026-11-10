@@ -54,7 +54,7 @@ This MMFO's latest released Breatless version 2 (compatible v13 & v14) is downlo
 
 Link: https://github.com/Mystery-Man-From-Ouperspace/breathless2/releases/download/breathless2/system.json
 
-It will be soon downloadable directly from whithin Foundry VTT, for I sbmitted it to them. 
+It will be soon downloadable directly from within Foundry VTT, for I sbmitted it to them. 
 
 ## Content License Note
 
