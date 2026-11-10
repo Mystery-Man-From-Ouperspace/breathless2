@@ -228,7 +228,7 @@ export class BreathlessActor extends Actor {
             }
         }
 
-        // TODO should this go to D12?
+        // TODO should this go to D12? It goes now !
         let stepup = "";
         switch (iType) {
             case "gear": {

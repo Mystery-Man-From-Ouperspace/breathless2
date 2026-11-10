@@ -195,10 +195,12 @@ export class BreathlessActorSheet extends foundry.appv1.sheets.ActorSheet {
                     this._onCheckLoot();
                     return;
                 }
+                /*
                 case 'grit-use': {
                     this._onUseGrit();
                     return;
                 }
+                */
                 case 'toggle-stress': {
                     this._onToggleStress(dataset.pos);
                     return;
@@ -344,16 +346,10 @@ export class BreathlessActorSheet extends foundry.appv1.sheets.ActorSheet {
         let newLoot = await loot.draw({displayChat:true});
     }
 
+    /*
     async _onUseGrit() {
-        /*
-        const loot = game.tables.filter(table => table.name === "Loot")[0];
-        if(loot === undefined) {
-            return ui.notifications.error(game.i18n.localize("breathless2.error.lootCheck"))
-        }
-
-        let newLoot = await loot.draw({displayChat:true});
-        */
     }
+    */
 
     async _onUseHealing(actorData) {
         // allow quick clearing of the toggle without triggering a heal
