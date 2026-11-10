@@ -23,15 +23,18 @@ An unofficial, community-supported system for playing the Breathless TTRPGs (Cre
 ## Features
 
 - Simple Character Sheet
-  - Name, Pronouns, Job, Stress tracker
+  - Name, Pronouns, Occupation, Stress tracker
   - Medkit button (heals Stress when clicked)
-  - Stunt button, rolls D12 when clicked
+  - Safe Rest button, rolls D12 when clicked
   - Notes tab
-- Ability add and use Skills, dice type will change with use
+- Ability add and use Stats, dice type will change with use
+- Use Loot, dice type will change with use
+- Use Grit, d12 will be hidden with use
 - Ability add and use Gear, dice type will change with use
 - System settings to help modify the sheet to match different versions of Breathless games
 - Simple NPC Sheet
 - Dark & light versions of the character sheet, use settings to change
+- Base Stats (6) item allready created in system compendium
 
 ## To Be Done
 
@@ -45,7 +48,7 @@ You can install the latest released version of the system by using this manifest
 [Instructions](https://foundryvtt.com/article/tutorial/)
 Link: https://github.com/waryjack/breathless/releases/latest/download/system.json
 
-MMFO version (compatible v13 & v14): Click `Code > Download ZIP` then install manually into Foundry VTT.
+MMFO version 2 (compatible v13 & v14): Click `Code > Download ZIP` then install manually into Foundry VTT.
 
 ## Content License Note
 
