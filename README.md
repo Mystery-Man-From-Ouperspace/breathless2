@@ -44,12 +44,15 @@ Version 2 may vary a lot from this descripion
 
 ## How to Install
 
-You can install the latest released version of the system by using this manifest link in Foundry VTT.
+You can install the latest released version of the Breathless (v1) system by using this manifest link in Foundry VTT.
 
 [Instructions](https://foundryvtt.com/article/tutorial/)
 Link: https://github.com/waryjack/breathless/releases/latest/download/system.json
 
-MMFO version 2 (compatible v13 & v14): Click `Code > Download ZIP` then install manually into Foundry VTT.
+This MMFO's latest released Breatless version 2 (compatible v13 & v14) is downloadable from this manifest link in Foundry VTT.
+Link: https://github.com/Mystery-Man-From-Ouperspace/breathless2/releases/download/breathless2/system.json
+
+It will be soon downloadable directly from whithin Foundry VTT, for I sbmitted it to them. 
 
 ## Content License Note
 
