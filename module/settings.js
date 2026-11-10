@@ -43,7 +43,7 @@ export const registerSettings = function() {
         scope: "world",
         config:true,
         type:String,
-        default: "Job"
+        default: "Occupation"
     });
 
     game.settings.register("breathless2", "catch_your_breath", {

@@ -14,7 +14,7 @@
     "breathless2.gen": {
         "name":"Name",
         "pronouns":"Pronouns",
-        "job":"Job",
+        "job":" Occupation",
         "initial":"Initial",
         "current.long":"Current",
         "success.full":"Success!",
@@ -95,9 +95,9 @@
             "default": "Character Sheet"
         },
         "job_name": {
-            "name": "Job Custom Name",
-            "hint": "Set the displayed name for the Job label in your game (e.g. Profession, Role, etc.)",
-            "default": "Job"
+            "name": "Occupation Custom Name",
+            "hint": "Set the displayed name for the Occupation label in your game (e.g. Job, Profession, Role, etc.)",
+            "default": "Occupation"
         },
         "catch_your_breath": {
             "name": "Catch Your Breath Custom Name",
