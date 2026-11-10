@@ -35,7 +35,7 @@ Version 2 may vary a lot from this descripion
 - System settings to help modify the sheet to match different versions of Breathless v2 games
 - Simple NPC Sheet
 - Dark & light versions of the character sheet, use settings to change
-- Base Stats (6) item allready created in system compendium
+- Base Stats items (6) allready created in system compendium
 
 ## To Be Done
 
