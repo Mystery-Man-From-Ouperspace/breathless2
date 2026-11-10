@@ -12,11 +12,13 @@ An unofficial, community-supported system for playing the Breathless TTRPGs (Cre
 <!--- Downloads @ Latest Badge -->
 
 ![A screenshot of the Breathless character sheet and chat output in Foundry VTT](./assets/screenshot.webp)
+
 Version 2 may vary a lot from this descripion
 
 ### Settings
 
 ![A screenshot of the Breathless settings page in Foundry VTT](./assets/settings.webp)
+
 Version 2 may vary a lot from this descripion
 
 ## Features
