@@ -26,12 +26,11 @@ Version 2 may vary a lot from this descripion
 
 - Simple Character Sheet
   - Name, Pronouns, Occupation, Stress tracker
-  - Medkit button (heals Stress when clicked)
-  - Safe Rest button, rolls D12 when clicked
+  - Safe Rest button button (heals Stress when clicked)
   - Notes tab
 - Ability add and use Stats, dice type will change with use
 - Use Loot, dice type will change with use
-- Use Grit, d12 will be hidden with use
+- Use Grit, rolls d12, will be hidden with use
 - Ability add and use Gear, dice type will change with use
 - System settings to help modify the sheet to match different versions of Breathless games
 - Simple NPC Sheet
