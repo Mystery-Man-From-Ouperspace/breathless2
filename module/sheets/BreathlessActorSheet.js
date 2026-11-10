@@ -164,6 +164,7 @@ export class BreathlessActorSheet extends foundry.appv1.sheets.ActorSheet {
      */
     _onRoll(event) {
         event.preventDefault();
+        const actorData = this.actor
         const element = event.currentTarget;
         const dataset = element.dataset;
 
@@ -215,7 +216,8 @@ export class BreathlessActorSheet extends foundry.appv1.sheets.ActorSheet {
                     return;
                 }
                 case 'use-healing': {
-                    this.actor.useHealing();
+                    // this.actor.useHealing();
+                    this._onUseHealing(actorData);
                     return;
                 }
                 case 'roll-dice': {
@@ -277,7 +279,7 @@ export class BreathlessActorSheet extends foundry.appv1.sheets.ActorSheet {
                             itemToDelete.delete();
                         }
                     },
-                        two: {
+                    two: {
                         icon: '<i class="fas fa-cancel"></i>',
                         label: game.i18n.localize("breathless2.dialogs.labels.cancel"),
                         callback: () => { return; }
@@ -342,7 +344,7 @@ export class BreathlessActorSheet extends foundry.appv1.sheets.ActorSheet {
         let newLoot = await loot.draw({displayChat:true});
     }
 
-async _onUseGrit() {
+    async _onUseGrit() {
         /*
         const loot = game.tables.filter(table => table.name === "Loot")[0];
         if(loot === undefined) {
@@ -351,5 +353,145 @@ async _onUseGrit() {
 
         let newLoot = await loot.draw({displayChat:true});
         */
+    }
+
+    async _onUseHealing(actorData) {
+        // allow quick clearing of the toggle without triggering a heal
+        if(actorData.system.healing.used == true) {
+            actorData.update({"system.healing.used":false});
+            return;
+        }
+
+        let healToggle = actorData.system.healing.used;
+        actorData.update({"system.healing.used":!healToggle});
+
+        // Render modal dialog
+        const myTemplate = 'systems/breathless2/templates/msg/healingdialog.hbs';
+        const myTitle = await game.i18n.localize("breathless2.dialogs.healing.title");
+        console.log("myTitle", myTitle)
+
+        var myDialogData = {
+            nbrHarmsCleared: "0"
+        };
+
+        const myDialogOptions = {
+            classes: ["breathless2", "sheet", "dialog"]
+        };
+
+        // const templateData = await foundry.utils.mergeObject(myDialogData, myDialogOptions);
+
+        const myHtml = await foundry.applications.handlebars.renderTemplate(myTemplate, myDialogOptions);
+
+        console.log ("myHtml", myHtml)
+
+
+        // Create the Dialog window
+        console.log("Le dialogue va être affiché")
+        let prompt = await new Promise((resolve) => {
+            new Dialog(
+                {
+                    title: myTitle,
+                    content: myHtml,
+                    buttons: {
+                        one: {
+                            icon: '<i class="fas fa-check"></i>',
+                            label: game.i18n.localize("breathless2.dialogs.labels.ok"),
+                            callback: (myHtml) => resolve( myDialogData = _computeResult(actorData, myDialogData, myHtml) )
+                        },
+                        two: {
+                            icon: '<i class="fas fa-cancel"></i>',
+                            label: game.i18n.localize("breathless2.dialogs.labels.cancel"),
+                            callback: (myHtml) => resolve( null )
+                        }
+                    },
+                    default: 'two',
+                    close: () => resolve( null )
+                },
+                myDialogOptions
+            ).render(true, {
+                width: 520,
+                height: "auto"
+            })
+        // actorData.render(true);
+        });
+
+        let healing;
+        if (prompt != null) {
+            healing = prompt.nbrHarmsCleared;
+        } else {
+            healing = myDialogData.nbrHarmsCleared;
+        };
+
+        // toggle down some stress boxes
+        let states = actorData.system.stress.states;
+        switch (healing) {
+            case "0": {
+                break;
+            }
+            case "1": {
+                if (states[4] == true) {
+                    states[4] = false;
+                } else if (states[3] == true) {
+                    states[3] = false;
+                } else if (states[2] == true) {
+                    states[2] = false;
+                } else if (states[1] == true) {
+                    states[1] = false;
+                } else if (states[0] == true) {
+                    states[0] = false;
+                };
+                break;
+            }
+            case "2": {
+                if(states[4] == true && states[3] == true) {
+                    states[4] = false;
+                    states[3] = false;
+                } else if (states[3] == true && states[2] == true) {
+                    states[3] = false;
+                    states[2] = false;
+                } else if (states[2] == true && states[1] == true) {
+                    states[2] = false;
+                    states[1] = false;
+                } else if (states[1] == true && states[0] == true) {
+                    states[1] = false;
+                    states[0] = false;
+                } else if (states[0] == true) {
+                    states[0] = false;
+                };
+                break;
+            }
+            case "3": {
+                if(states[4] == true && states[3] == true && states[2] == true) {
+                    states[4] = false;
+                    states[3] = false;
+                    states[2] = false;
+                } else if (states[3] == true && states[2] == true && states[1] == true) {
+                    states[3] = false;
+                    states[2] = false;
+                    states[1] = false;
+                } else if (states[2] == true && states[1] == true && states[0] == true) {
+                    states[2] = false;
+                    states[1] = false;
+                    states[0] = false;
+                } else if (states[1] == true && states[0] == true) {
+                    states[1] = false;
+                    states[0] = false;
+                } else if (states[0] == true) {
+                    states[0] = false;
+                };
+                break;
+            }
+            default:;
+        }
+        actorData.update({"system.stress.states":states});
+        /*
+        actorData.render(true);
+        */
+        async function _computeResult(actorData, myDialogData, myHtml) {
+            const editedData = {
+                nbrHarmsCleared: await myHtml.find("select[name='healingchoices']").val()
+            }
+            return editedData;
+        }
     }
 }
