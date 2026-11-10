@@ -437,7 +437,7 @@ export class BreathlessActor extends Actor {
                     }
                     case "d4":
                     default: {
-                        stepdown = "--";
+                        stepdown = "d4";
                         break;
                     }
                 }; break;
