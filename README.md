@@ -1,6 +1,8 @@
 # Breathless v2 (Unofficial) System
 
-An unofficial, community-supported system for playing the Breathless TTRPGs (Created by René-Pier Deshaies-Gélinas of [Fari RPGs](https://fari.community/creators/fari-rpgs)) on the Foundry VTT platform.
+An unofficial system for playing the Breathless TTRPGs (Created by René-Pier Deshaies-Gélinas of [Fari RPGs](https://fari.community/creators/fari-rpgs)) on the Foundry VTT platform.
+
+V2 made by me after: https://github.com/waryjack/breathless/
 
 - The Breathless SRD: https://fari.community/creators/fari-rpgs/projects/breathless
 - The Breathless Game: https://fari-rpgs.itch.io/breathless
