@@ -1,4 +1,4 @@
-# Breathless (Unofficial) System
+# Breathless v2 (Unofficial) System
 
 An unofficial, community-supported system for playing the Breathless TTRPGs (Created by René-Pier Deshaies-Gélinas of [Fari RPGs](https://fari.community/creators/fari-rpgs)) on the Foundry VTT platform.
 
@@ -32,7 +32,7 @@ Version 2 may vary a lot from this descripion
 - Use Loot, dice type will change with use
 - Use Grit, rolls d12, will be hidden with use
 - Ability add and use Gear, dice type will change with use
-- System settings to help modify the sheet to match different versions of Breathless games
+- System settings to help modify the sheet to match different versions of Breathless v2 games
 - Simple NPC Sheet
 - Dark & light versions of the character sheet, use settings to change
 - Base Stats (6) item allready created in system compendium
