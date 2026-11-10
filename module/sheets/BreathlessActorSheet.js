@@ -267,11 +267,17 @@ export class BreathlessActorSheet extends foundry.appv1.sheets.ActorSheet {
 
     _onDeleteItem(dataset) {
         let id = dataset.itemId;
+         const myDialogOptions = {
+            classes: ["breathless2", "sheet", "dialog"]
+        };
+        let myHtml = `<form class="breathless2"><header class="dialog-header"><h1>`+
+        game.i18n.localize("breathless2.dialogs.delete.confirm")+
+        `</h1></header></form>`
 
         let d = new Dialog(
             {
                 title: game.i18n.localize("breathless2.dialogs.delete.title"),
-                content: game.i18n.localize("breathless2.dialogs.delete.confirm"),
+                content: myHtml,
                 buttons: {
                     one: {
                         icon: '<i class="fas fa-check"></i>',
@@ -288,9 +294,13 @@ export class BreathlessActorSheet extends foundry.appv1.sheets.ActorSheet {
                     }
                 },
                 default: "two"
-            }
+            },
+            myDialogOptions
         );
-        d.render(true);
+        d.render(true, {
+            width: 520,
+            height: "auto"
+        });
     }
 
 

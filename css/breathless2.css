@@ -533,6 +533,10 @@
 }
 
 
+.theme-dark .breathless2 button.dialog-button.one,
+.theme-dark .breathless2 button.dialog-button.two {
+  color: white;
+}
 
 .theme-dark .breathless2 .window-content {
   color: white;

@@ -53,7 +53,7 @@
         "labels.yes":"Yes",
         "labels.initial_die": "Initial Die",
         "labels.current_die": "Current Die",
-        "healing.title":"Select number of harms to be cleared.",
+        "healing.title":"Select number of harms to be cleared",
         "healing.choice":"Harms to be cleared:",
         "healing.labels": {
             "zero": "None",
