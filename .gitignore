@@ -2,6 +2,8 @@
 .idea/
 .vs/
 
+.github/workflow/main.yaml
+
 # Node Modules
 node_modules/
 npm-debug.log
