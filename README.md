@@ -43,9 +43,9 @@ Version 2 may differ a lot from this descripion
 - Create a sample Loot table
 - Add a few Gasps as settings
 - Add: when an Item is used, the player rolls its die.
- - 1-2: The Item die steps down. If it was Stressed, or would step below d4, it is depleted, worn out, or consumed.
- - 3-4: The Item is marked as Stressed, but its Item die remains unchanged.
- - 5+: The Item die remains unchanged.
+- - 1-2: The Item die steps down. If it was Stressed, or would step below d4, it is depleted, worn out, or consumed.
+- - 3-4: The Item is marked as Stressed, but its Item die remains unchanged.
+- - 5+: The Item die remains unchanged.
  
 
 
