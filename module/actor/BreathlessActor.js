@@ -123,7 +123,7 @@ export class BreathlessActor extends Actor {
 
         let result = r.total;
 
-        if (item.type = "gear") {
+        if (item.type === "gear") {
 
             if (result >= 5) {
                 // The Item die remains unchanged
