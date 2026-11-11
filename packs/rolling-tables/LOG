@@ -1,1 +1,16 @@
-2026/11/11-01:22:42.601 28a0 Delete type=3 #1
+2026/11/11-01:28:35.596 28a0 Recovering log #3
+2026/11/11-01:28:35.596 28a0 Level-0 table #5: started
+2026/11/11-01:28:35.600 28a0 Level-0 table #5: 26051 bytes OK
+2026/11/11-01:28:35.606 28a0 Delete type=0 #3
+2026/11/11-01:28:35.606 28a0 Delete type=3 #2
+2026/11/11-01:34:50.053 c64 Level-0 table #8: started
+2026/11/11-01:34:50.056 c64 Level-0 table #8: 6041 bytes OK
+2026/11/11-01:34:50.058 c64 Delete type=0 #6
+2026/11/11-01:34:50.058 c64 Manual compaction at level-0 from '!tables!5KuKvWwEayRWBVtm' @ 72057594037927935 : 1 .. '!tables.results!u36aWgsg50BVcnod.tqEB7NkTZm6nlnSP' @ 0 : 0; will stop at '!tables.results!u36aWgsg50BVcnod.tqEB7NkTZm6nlnSP' @ 136 : 1
+2026/11/11-01:34:50.058 c64 Compacting 2@0 + 0@1 files
+2026/11/11-01:34:50.062 c64 Generated table #9@0: 102 keys, 13481 bytes
+2026/11/11-01:34:50.063 c64 Compacted 2@0 + 0@1 files => 13481 bytes
+2026/11/11-01:34:50.065 c64 compacted to: files[ 0 1 0 0 0 0 0 ]
+2026/11/11-01:34:50.065 c64 Delete type=2 #5
+2026/11/11-01:34:50.065 c64 Delete type=2 #8
+2026/11/11-01:34:50.069 c64 Manual compaction at level-0 from '!tables.results!u36aWgsg50BVcnod.tqEB7NkTZm6nlnSP' @ 136 : 1 .. '!tables.results!u36aWgsg50BVcnod.tqEB7NkTZm6nlnSP' @ 0 : 0; will stop at (end)
