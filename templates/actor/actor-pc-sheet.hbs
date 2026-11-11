@@ -203,6 +203,7 @@
                             <a class="on-click" data-roll-type="stepdown" data-field="current" data-item-id="{{gear._id}}"><i class="fa-solid fa-caret-down"></i></a>
                         </span>
                         <span class="item-controls flexcol flex0">
+                            <input name="system.stressed" type="checkbox" {{checked gear.system.stressed}} disabled title='{{localize "breathless2.item.stressedItemMarker"}}'/>
                             <a title="Edit {{gear.name}}" class="on-click" data-roll-type="item-edit" data-item-id="{{gear._id}}"><i class="fa-solid fa-pencil"></i></a>
                             <a title="Delete {{gear.name}}" class="on-click" data-roll-type="item-delete" data-item-id="{{gear._id}}"><i class="fa-solid fa-xmark"></i></a>
                         </span>

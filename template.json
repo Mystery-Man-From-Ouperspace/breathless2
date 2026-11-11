@@ -11,7 +11,8 @@
             "initial":"d4",
             "current":"d4",
             "minimum":"d4",
-            "notes":""
+            "notes":"",
+            "stressed": false
         }
     },
     "Actor":{

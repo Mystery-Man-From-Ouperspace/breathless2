@@ -13,5 +13,6 @@
         <select name="system.current" id="current">
             {{selectOptions gearchoices selected=current valueAttr="key" labelAttr="label" localize=true}}
         </select>
+        <input name="system.stressed" type="checkbox" {{checked item.system.stressed}}>{{localize "breathless2.item.stressed"}}</input>
     </div>
 </form>

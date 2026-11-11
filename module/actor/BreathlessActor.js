@@ -123,9 +123,28 @@ export class BreathlessActor extends Actor {
 
         let result = r.total;
 
-        // step the die value down until reset
-        this.stepDown(id, "current");
-        
+        if (item.type = "gear") {
+
+            if (result >= 5) {
+                // The Item die remains unchanged
+            } else if (result < 3) {
+                // The Item die steps down. If it was Stressed, or would step below d4,
+                // it is depleted, worn out, or consumed.
+                if (item.system.stressed) {
+                    item.update({"system.current":"--"});
+                } else {
+                    this.stepDown(id, "current");
+                }
+            } else {
+                // The Item is marked as Stressed, but its Item die remains unchanged.
+                item.update({"system.stressed":true});
+            }
+
+        } else {
+            // step the die value down until reset
+            this.stepDown(id, "current");
+        }
+
         // determine the level of success
         if (result >= 5) {
             outcome = game.i18n.localize("breathless2.gen.success.full");
