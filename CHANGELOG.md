@@ -24,4 +24,7 @@ v0.4.0
 
 ---
 Bugs connus et non encore traités (yes, I'm French)
+
 Not already corrected known bugs
+
+- To be done: Erase Stunt Settings (doing that makes a bug)
