@@ -303,7 +303,6 @@ export class BreathlessActorSheet extends foundry.appv1.sheets.ActorSheet {
         });
     }
 
-
     _onToggleStress(pos) {
         let currentArray = this.actor.system.stress.states;
         let currentState = currentArray[pos];
@@ -314,8 +313,15 @@ export class BreathlessActorSheet extends foundry.appv1.sheets.ActorSheet {
         } else {
             newState = false;
         }
-
-        currentArray[pos] = newState;
+        if (newState === true) {
+            for (let i=0; i<=pos; i++) {
+                currentArray[i] = newState;
+            }
+        } else {
+            for (let i=pos; i<currentArray.length; i++) {
+                currentArray[i] = newState;
+            }
+        }
         return this.actor.update({["system.stress.states"]:currentArray});
     }
 
