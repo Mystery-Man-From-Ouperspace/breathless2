@@ -1,3 +1,7 @@
+v1.0.4
+- Added Textarea into item sheets
+- Added compendium of 6 base stats in French from Breathless v2 DRS
+
 v1.0.3
 - Modified Behavior of Harm buttons (now grouped, no more gaps)
 - Fixed Catch your breath (5th Harm button included)
