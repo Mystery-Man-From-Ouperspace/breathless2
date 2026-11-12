@@ -1,4 +1,5 @@
 v1.0.4
+- Fixed Loot also reinitialized to initial die when Catch your breath is clicked
 - Added Textarea into item sheets
 - Added compendium of 6 base stats in French from Breathless v2 DRS
 
