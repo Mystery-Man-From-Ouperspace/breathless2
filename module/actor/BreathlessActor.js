@@ -524,8 +524,9 @@ export class BreathlessActor extends Actor {
     catchBreath() {
         let skills = this.items;
         // let special = this.system.special;
+        let initialgrit = this.system.grit.initial
 
-            this.update({"system.grit.current":"d12"});
+            this.update({"system.grit.current":initialgrit});
             this.sheet.render(true);
 
 
