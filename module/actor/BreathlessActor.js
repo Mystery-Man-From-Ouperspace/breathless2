@@ -496,7 +496,9 @@ export class BreathlessActor extends Actor {
         let states = stress.states;
         
         // clear 1 stress
-        if(states[3] == true) {
+        if(states[4] == true) {
+            states[4] = false;
+        } else if(states[3] == true) {
             states[3] = false;
         } else if (states[2] == true) {
             states[2] = false;
