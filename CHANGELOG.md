@@ -1,5 +1,5 @@
 v1.0.3
-- Modified Behavior of Harm buttons
+- Modified Behavior of Harm buttons (now grouped, no more gaps)
 
 v1.0.2
 - Added A 'Stressed' checkbox into Gear item sheet
@@ -29,4 +29,4 @@ Bugs connus et non encore traités (yes, I'm French)
 
 Not already corrected known bugs
 
-- To be done: Erase Stunt Settings (doing that makes a bug)
+- To be done: Erase Stunt settings (doing that makes a bug appeared)
