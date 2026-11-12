@@ -2,8 +2,8 @@ v1.0.3
 - Modified Behavior of Harm buttons (now grouped, no more gaps)
 
 v1.0.2
-- Added A 'Stressed' checkbox into Gear item sheet
-- Added A 'Stressed' checkbox into Character sheet, facing each Gear item
+- Added a 'Stressed' checkbox into Gear item sheet
+- Added a 'Stressed' checkbox into Character sheet, facing each Gear item
 - Modified When an Item is used, the player rolls its die:
   - 1-2: The Item die steps down. If it was Stressed, or would step below d4, it is depleted, worn out, or consumed.
   - 3-4: The Item is marked as Stressed, but its Item die remains unchanged.
@@ -11,15 +11,17 @@ v1.0.2
 
 v1.0.1
 - Added compendium of 6 base stats from Breathless v2 DRS
+- Added an icon avatar for each of these stats
 - Added compendium of 6 roll tables from Breathless v2 DRS
 
 v1.0.0
-- Adapted to Version 13 & version 14 of Foundry
-- Adapted to Version 2 of Breathless
-  - Changed labels by default to be conform with Breathless v2 DRS rules
+- Adapted to Version v13 & version v14 of Foundry VTT
+- Adapted to Version of Breathless v2
+  - Changed labels vocabulary by default to be conform with Breathless v2 DRS rules
+  - ('Harm' remplaces 'Stress', 'Safe Rest' remplaces 'Medkit', etc.)
   - Added Loot die
   - Added Grit die
-  - Erased Stunt button
+  - Removed Stunt button
 
 v0.4.0
 - 2 years, 5 months ago (original by 'ephson')
