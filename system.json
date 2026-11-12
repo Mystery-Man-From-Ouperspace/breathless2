@@ -54,6 +54,17 @@
         }
       },
       {   
+        "name": "stats-fr",
+        "label": "Breathless v2 - Stats (FR)",
+        "system": "breathless2",
+        "path": "packs/stats-fr",
+        "type": "Item",
+        "ownership": {
+          "PLAYER": "OBSERVER",
+          "ASSISTANT": "OWNER"
+        }
+      },
+      {   
         "name": "rolling-tables",
         "label": "Breathless v2 - Rolling tables",
         "system": "breathless2",
