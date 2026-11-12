@@ -532,15 +532,27 @@
   border: none;
 }
 
+
+.theme-dark .breathless2 div div.notes {
+  color: white;
+  border-color: white;
+}
+
 .theme-dark .item-sheet div.notes textarea {
   color: white;
   border-color: white;
 }
 
-.theme-dark .item-sheet header input {
+.theme-dark .item-sheet header h1 input {
   color: white;
   border-color: white;
 }
+
+.theme-dark .item-sheet header img {
+  color: white;
+  border-color: white;
+}
+
 
 .theme-dark #pause > img {
   content: url("/systems/breathless2/assets/wheel_2.webp");
