@@ -1,3 +1,6 @@
+v1.0.5
+- Fixed Safe Rest Harm cleared == "0" no more reported to GM
+
 v1.0.4
 - Fixed Loot also reinitialized to initial die when Catch your breath is clicked
 - Added Textarea into item sheets
