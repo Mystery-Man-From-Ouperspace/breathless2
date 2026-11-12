@@ -499,6 +499,16 @@ export class BreathlessActorSheet extends foundry.appv1.sheets.ActorSheet {
         /*
         actorData.render(true);
         */
+
+        let pcName = actorData.name;
+        // notify GM that it happened
+        ChatMessage.create({
+            user:game.user_id,
+            rollMode:'gmroll',
+            whisper: ChatMessage.getWhisperRecipients("GM"),
+            content: game.i18n.format('breathless2.chatMessage.medkitUsed', {pcName: pcName, nbrHarmsCleared: healing})
+        });
+
         async function _computeResult(actorData, myDialogData, myHtml) {
             const editedData = {
                 nbrHarmsCleared: await myHtml.find("select[name='healingchoices']").val()

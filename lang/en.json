@@ -69,6 +69,7 @@
 
     "breathless2.chatMessage.healUsed": "<b>NOTE</b>: {pcName} used Catch Your Breath.",
     "breathless2.chatMessage.layLowUsed": "<b>NOTE</b>: {pcName} used Lay Low Awhile.",
+    "breathless2.chatMessage.medkitUsed": "<b>NOTE</b>: {pcName} used Safe Rest [-{nbrHarmsCleared} Harm(s)].",
     "breathless2.error.lootCheck": "There is no Loot table set up. Create a new Rollable Table called \"Loot\", then try again.",
     
     "breathless2.interface.warning.maxstorage": "You can't add anything else to your {storName}.",
