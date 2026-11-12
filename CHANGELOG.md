@@ -22,7 +22,7 @@ v1.0.0
   - Erased Stunt button
 
 v0.4.0
-2 years, 5 months ago (original by 'ephson')
+- 2 years, 5 months ago (original by 'ephson')
 
 ---
 Bugs connus et non encore traités (yes, I'm French)
