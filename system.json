@@ -2,7 +2,7 @@
     "id": "breathless2",
     "title": "Breathless v2 System (Unofficial)",
     "description": "Foundry VTT system for Fari RPG's Breathless system",
-    "version": "v1.0.3",
+    "version": "v1.0.4",
     "authors": [
         {
             "name": "Chris Clouser",
@@ -36,7 +36,7 @@
     "primaryTokenAttribute": "stress",
     "url": "https://github.com/Mystery-Man-From-Ouperspace/breathless2",
     "manifest": "https://github.com/Mystery-Man-From-Ouperspace/breathless2/releases/download/breathless2/system.json",
-    "download": "https://github.com/Mystery-Man-From-Ouperspace/breathless2/releases/download/1.0.3/release-103.zip",
+    "download": "https://github.com/Mystery-Man-From-Ouperspace/breathless2/releases/download/1.0.4/release-104.zip",
 
     "license": "LICENSE",
     "readme": "README.md",
