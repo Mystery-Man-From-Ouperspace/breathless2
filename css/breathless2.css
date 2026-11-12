@@ -532,6 +532,16 @@
   border: none;
 }
 
+.theme-dark .item-sheet div.notes textarea {
+  color: white;
+  border-color: white;
+}
+
+.theme-dark .item-sheet header input {
+  color: white;
+  border-color: white;
+}
+
 .theme-dark #pause > img {
   content: url("/systems/breathless2/assets/wheel_2.webp");
   height: 192px;

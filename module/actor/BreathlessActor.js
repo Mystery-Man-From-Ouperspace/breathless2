@@ -525,8 +525,10 @@ export class BreathlessActor extends Actor {
         let skills = this.items;
         // let special = this.system.special;
         let initialgrit = this.system.grit.initial
+        let initialloot = this.system.loot.initial
 
             this.update({"system.grit.current":initialgrit});
+            this.update({"system.loot.current":initialloot});
             this.sheet.render(true);
 
 
