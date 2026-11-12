@@ -1,5 +1,7 @@
 v1.0.3
 - Modified Behavior of Harm buttons (now grouped, no more gaps)
+- Fixed Catch your breath (5th Harm button included)
+- Fixed Lay low awhile (Grit dice included)
 
 v1.0.2
 - Added a 'Stressed' checkbox into Gear item sheet
