@@ -14,15 +14,15 @@ v1.0.1
 - Added compendium of 6 roll tables from Breathless v2 DRS
 
 v1.0.0
-- Adapted to Version 13 & version 14 of Foundry by MMFO
-- Adapted to Version 2 of Breathless by MMFO
+- Adapted to Version 13 & version 14 of Foundry
+- Adapted to Version 2 of Breathless
   - Changed labels by default to be conform with Breathless v2 DRS rules
   - Added Loot die
   - Added Grit die
   - Erased Stunt button
 
 v0.4.0
-2 years, 5 months ago by ephson
+2 years, 5 months ago (original by 'ephson')
 
 ---
 Bugs connus et non encore traités (yes, I'm French)
