@@ -3,7 +3,7 @@ v1.0.3
 
 v1.0.2
 - Added A 'Stressed' checkbox into Gear item sheet
-- Added A 'Stressed' checkbox into Character sheet, facing Gear items
+- Added A 'Stressed' checkbox into Character sheet, facing each Gear item
 - Modified When an Item is used, the player rolls its die:
   - 1-2: The Item die steps down. If it was Stressed, or would step below d4, it is depleted, worn out, or consumed.
   - 3-4: The Item is marked as Stressed, but its Item die remains unchanged.
