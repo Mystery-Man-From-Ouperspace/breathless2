@@ -49,7 +49,7 @@ export function registerHandlebarsHelpers() {
         return game.settings.get('breathless', arg);
     });
 
-    /*
+    /* Interference with Core
     Handlebars.registerHelper("concat", function(...args){
         let result = "";
         for (let a of args) {
