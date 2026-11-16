@@ -1,8 +1,6 @@
-v1.0.6
-- Erased 'concat' handlebar definition (put as comment) because it interfered with core own definition breaking GUI
-
 v1.0.5
 - Fixed Safe Rest Harm cleared == "0" no more reported to GM
+- Erased 'concat' handlebar definition (put as comment) because it interfered with core own definition breaking GUI
 
 v1.0.4
 - Fixed Loot also reinitialized to initial die when Catch your breath is clicked
