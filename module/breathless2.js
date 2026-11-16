@@ -77,7 +77,7 @@ Hooks.once("init", () => {
         return game.settings.get('breathless2', arg);
     });
 
-    /* Interference with Core
+    /* Interference with Core ==> problem in GUI
     Handlebars.registerHelper("concat", function(...args){
         let result = "";
         for (let a of args) {
