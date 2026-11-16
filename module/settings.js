@@ -64,7 +64,8 @@ export const registerSettings = function() {
         default: "Lay Low Awhile"
     });
 
-game.settings.register("breathless2", "loot_table_name", {
+
+    game.settings.register("breathless2", "loot_table_name", {
         name:"breathless2.settings.loot_table_name.name",
         hint:"breathless2.settings.loot_table_name.hint",
         scope: "world",

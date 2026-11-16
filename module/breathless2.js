@@ -77,6 +77,7 @@ Hooks.once("init", () => {
         return game.settings.get('breathless2', arg);
     });
 
+    /*
     Handlebars.registerHelper("concat", function(...args){
         let result = "";
         for (let a of args) {
@@ -84,6 +85,7 @@ Hooks.once("init", () => {
         }
         return result;
     });
+    */
 
     Handlebars.registerHelper("getCustomName", function(a) {
         if (a == "none" || a == "None" || a == "") { return; }

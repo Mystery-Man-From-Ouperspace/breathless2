@@ -49,6 +49,7 @@ export function registerHandlebarsHelpers() {
         return game.settings.get('breathless', arg);
     });
 
+    /*
     Handlebars.registerHelper("concat", function(...args){
         let result = "";
         for (let a of args) {
@@ -56,6 +57,7 @@ export function registerHandlebarsHelpers() {
         }
         return result;
     });
+    */
 
     Handlebars.registerHelper("getCustomName", function(a) {
         if (a == "none" || a == "None" || a == "") { return; }
